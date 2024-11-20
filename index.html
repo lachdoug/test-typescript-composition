@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/mixer.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typescript Composition</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form is="app-form">
+        <app-field></app-field>
+        <app-submit>OK</app-submit>
+      </form>
+    </div>
+  </body>
+
+  <!-- Components -->
+
+  <!-- Field -->
+  <template for="app-field">
+    <input></input>
+  </template>
+
+  <template for="app-form">
+    <slot></slot>
+  </template>
+
+  <template for="app-submit">
+    <button type="submit">
+      <slot></slot>
+    </button>
+  </template>
+</html>
